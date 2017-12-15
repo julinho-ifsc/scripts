@@ -2,8 +2,8 @@ import requests, json
 
 def main():
     credentials = {
-      'email': 'admin@example.com',
-      'password': 'adminpassword123'
+        'email': 'admin@example.com',
+        'password': 'adminpassword123'
     }
 
     headers = {

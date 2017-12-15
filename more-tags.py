@@ -1,4 +1,5 @@
-import requests, json
+import requests
+import json
 
 def main():
     credentials = {
@@ -10,46 +11,33 @@ def main():
         'Content-Type': 'application/json'
     }
 
-    r = requests.post(
+    response = requests.post(
         'https://marvietech.com.br/app/api/auth',
         data=json.dumps(credentials),
         headers=headers
     )
 
-    token = r.json()['token']
+    token = response.json()['token']
 
     tags = [
-        'BC521A14',
-        'D2F7E4D4',
-        '827277D4',
-        None,
-        '8275D4D4',
-        '727C77D4',
-        'C29D77D4',
-        '82AD77D4',
-        '126174D4',
-        'C2FBD4D4',
-        'B26777D4',
-        'BC6A9A03',
-        '22F235D5',
-        '527867D4',
-        'C2F9C8D4',
-        '1CAF5C0D',
-        '9C835C0D',
-        'FC0F600D',
-        'D2CE77D4',
-        'F2EFF2D4'
+        'A5024741',
+        '05092941',
+        'F5A75941',
+        'F53F4741',
+        'A52FB541',
+        '75224441',
+        '556E7641',
+        'C5064E41',
+        'D50F4741',
+        '259F4D41'
     ]
 
     headers['Authorization'] = 'Bearer ' + token
 
     for index, tag in enumerate(tags):
-        if tag == None:
-            continue
-
         message = {
             'rfid': tag.lower(),
-            'name': 'tag ' + str(index + 1)
+            'name': 'tag ' + str(index + 25)
         }
 
         print(message['name'])
